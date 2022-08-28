@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "run-https": "local-ssl-proxy --key ../cert/web-admin.desabangkit.io-key.pem --cert ../cert/web-admin.desabangkit.io.pem --source 8002 --target 8001",
+    "test": "jest --verbose --runInBand --coverage",
+    "test:watch": "jest --watchAll --verbose --runInBand --coverage"
   },
   "dependencies": {
     "next": "12.2.5",
